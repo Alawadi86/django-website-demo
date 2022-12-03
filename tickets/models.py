@@ -22,6 +22,35 @@ class Project(models.Model):
         """String conversion"""
         return self.name
 
+    def open_tickets(self):
+        """ Get open Tickets"""
+        return self.tickets.filter(completed=False)
+
+    def closed_tickets(self):
+        """ Get closed Tickets"""
+        return self.tickets.filter(completed=True)
+
+    def exepedite_priority_tickets(self):
+        """ Get tickets with exepedite priority"""
+        return self.tickets.filter(priority=1, completed=False)
+
+    def high_priority_tickets(self):
+        """ Get tickets with high priority"""
+        return self.tickets.filter(priority=1, completed=False)
+
+
+    def medium_priority_tickets(self):
+        """ Get tickets with medium priority"""
+        return self.tickets.filter(priority=1, completed=False)
+
+
+    def low_priority_tickets(self):
+        """ Get tickets with low priority"""
+        return self.tickets.filter(priority=1, completed=False)
+  
+    def none_priority_tickets(self):
+        """ Get tickets with no priority"""
+        return self.tickets.filter(priority=1, completed=False)
 
 class Ticket(models.Model):
     """Represents a ticket for a project"""

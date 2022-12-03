@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # Ticket URLS will be at /projects since that is outer model
+    path("projects/",include("tickets.urls")),
     # adminlte2 default routes for demo purpose
     path('', include('adminlte2_pdq.urls')),
     # Django Accounts Routes
