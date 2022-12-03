@@ -14,8 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
+    # adminlte2 default routes for demo purpose
+    path('', include('adminlte2_pdq.urls')),
+    # Django Accounts Routes
+    path('accounts/', include("django.contrib.auth.urls")),
+    # Admin styled in Django but hosted in adminlte2 layout
     path('admin/', admin.site.urls),
 ]

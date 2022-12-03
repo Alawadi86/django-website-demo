@@ -1,0 +1,6 @@
+{% extends 'registration/login.html' %}
+ {% block social_auth_links %}{% endblock social_auth_links %}
+ {% block anoymous_from_remember_me %}{% endblock anoymous_from_remember_me %}
+ {% block anoymous_links %}
+<a hre="{% url 'password_reset' %}"> I forgot my password</a>
+{% endblock anoymous_links %}
