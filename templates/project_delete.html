@@ -1,6 +1,7 @@
 {% extends 'adminlte2/base.html' %}
 
 {% block title %}
+{{project.name}}
 {% endblock title %}
 
 {% block page_name %}
@@ -11,7 +12,9 @@
 
 {% block breadcrumbs %}
 <ol class="breadcrumb">
-    <li><i class="fa fa-dashboard"></i>Home</li>
+  <li>
+      <a href="{% url 'project_list' %}"
+      <i class="fa fa-dashboard"></i>Home</li>
   </ol>
 {% endblock breadcrumbs %}
 

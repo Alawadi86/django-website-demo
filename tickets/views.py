@@ -65,7 +65,7 @@ class TicketCreateView(CreateView):
         "description",
         "priority",
         "assigned_to",
-        "complete_by",
+        "completed_by",
         "completed",
     ]
 
@@ -94,11 +94,8 @@ class TicketCreateView(CreateView):
 
     def get_success_url(self):
         """ Return the location to redirect to on success """
-        messages.success(self, request,"Ticket Created Successfully")
+        messages.success(self, request, "Ticket Created Successfully")
         return reverse("project_detail", kwargs={"pk": self.project_pk})
-
-    
-
 
     
 class TicketEditView(UpdateView):
@@ -110,7 +107,7 @@ class TicketEditView(UpdateView):
         "description",
         "priority",
         "assigned_to",
-        "complete_by",
+        "completed_by",
         "completed",
     ]
 
