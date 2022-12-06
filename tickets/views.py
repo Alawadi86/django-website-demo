@@ -93,8 +93,8 @@ class TicketCreateView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        """ Return the location to redirect to on success """
-        messages.success(self, request, "Ticket Created Successfully")
+        """Return the location to redirect to on success"""
+        messages.success(self.request, "Ticket Created Successfully")
         return reverse("project_detail", kwargs={"pk": self.project_pk})
 
     
